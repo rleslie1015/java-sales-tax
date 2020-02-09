@@ -2,7 +2,7 @@ package local.salestax;
 
 import java.text.DecimalFormat;
 
-//this item represents the items before sales tax are applied
+
 public class Product
 {
 	//fields
@@ -28,11 +28,6 @@ public class Product
 	public String getName()
 	{
 		return name;
-	}
-
-	public void setName(String name)
-	{
-		this.name = name;
 	}
 
 	public double getPrice()
@@ -67,14 +62,14 @@ public class Product
 
 	public boolean isExempt()
 	{
-		if (name.contains("book") || name.contains("chocolate") || name.contains("pill")){
+		if (getName().contains("book") || getName().contains("chocolate") || getName().contains("pill")){
 			return true;
 		} return false;
 	}
 
 	public boolean isImported()
 	{
-		if (name.contains("imported"))
+		if (getName().contains("imported"))
 		{
 			return true;
 		} return false;
@@ -104,11 +99,4 @@ public class Product
 		return getImportedTax();
 	}
 
-	@Override
-	public String toString()
-	{
-		DecimalFormat df = new DecimalFormat("0.00");
-
-		return "1 "+ name + ": " + df.format(price) + "\n";
-	}
 }

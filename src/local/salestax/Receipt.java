@@ -20,11 +20,6 @@ public class Receipt implements AddProduct, CashierFunctions
 		return products;
 	}
 
-	public void setProducts(List<Product> products)
-	{
-		this.products = products;
-	}
-
 	public double getSalesTax()
 	{
 		return salesTax;
@@ -58,14 +53,14 @@ public class Receipt implements AddProduct, CashierFunctions
 		for (Product p : products)
 		{
 			// products either have no tax
-			if (p.isExempt() == true && p.isImported() == false)
+			if (p.isExempt() && !p.isImported())
 			{
 				p.setImportedTax(0.00);
 				p.setRegularTax(0.00);
 				settotal(total += p.getPrice());
 			}
 			// both tax
-			else if (p.isExempt() == false && p.isImported() == true)
+			else if (!p.isExempt() && p.isImported())
 			{
 				p.setRegularTax(p.calculateRegularTax());
 				p.setImportedTax(p.calculateImportedTax());
@@ -74,7 +69,7 @@ public class Receipt implements AddProduct, CashierFunctions
 				settotal(total += p.getPrice());
 			}
 			// or just imported tax
-			else if (p.isExempt() == true && p.isImported() == true)
+			else if (p.isExempt() && p.isImported())
 			{
 				p.setImportedTax(p.calculateImportedTax());
 				p.setPrice(p.getPrice() + p.getImportedTax());
@@ -82,14 +77,13 @@ public class Receipt implements AddProduct, CashierFunctions
 				settotal(total += p.getPrice());
 			}
 			// or just regular tax
-			else if (p.isExempt() == false && p.isImported() == false)
+			else if (!p.isExempt() && !p.isImported())
 			{
 				p.setRegularTax(p.calculateRegularTax());
 				p.setPrice(p.getPrice() + p.getRegularTax());
 				setSalesTax(getSalesTax() + p.getRegularTax());
 				settotal(total += p.getPrice());
 			}
-			//outside the loop return total
 		}
 	}
 
@@ -98,6 +92,10 @@ public class Receipt implements AddProduct, CashierFunctions
 	public String toString()
 	{
 		DecimalFormat df = new DecimalFormat("0.00");
-		return products.toString() + " salesTax: " + df.format(salesTax) + "\n total: " + df.format(total) + '\n';
+		StringBuilder stringBuilder = new StringBuilder("");
+		for (Product p : products) {
+			stringBuilder.append("1 "+ p.getName() + ": " + df.format(p.getPrice()) + "\n");
+		}
+		return stringBuilder + "Sales Taxes: " + df.format(salesTax) + "\nTotal: " + df.format(total) + '\n';
 	}
 }
