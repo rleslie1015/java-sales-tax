@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="57181234-75cc-4e7b-a1ba-b556ae58c027" name="Default Changelist" comment="added Maven framework support">
-      <change beforePath="$PROJECT_DIR$/src/main/java/local/salestax/Receipt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/local/salestax/Receipt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/local/salestax/ReceiptTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/local/salestax/ReceiptTest.java" afterDir="false" />
-    </list>
+    <list default="true" id="57181234-75cc-4e7b-a1ba-b556ae58c027" name="Default Changelist" comment="added Maven framework support" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -93,7 +90,7 @@
         <entry file="file://$PROJECT_DIR$/src/test/java/local/salestax/ProductTest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="270">
-              <caret line="41" column="43" lean-forward="true" selection-start-line="41" selection-start-column="43" selection-end-line="41" selection-end-column="43" />
+              <caret line="41" column="43" selection-start-line="41" selection-start-column="43" selection-end-line="41" selection-end-column="43" />
             </state>
           </provider>
         </entry>
@@ -135,7 +132,7 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-10" />
     <option name="y" value="-10" />
     <option name="width" value="1940" />
@@ -406,7 +403,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7920000" />
+    <option name="totallyTimeSpent" value="8531000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
@@ -567,7 +564,7 @@
     <entry file="file://$PROJECT_DIR$/src/test/java/local/salestax/ProductTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
-          <caret line="41" column="43" lean-forward="true" selection-start-line="41" selection-start-column="43" selection-end-line="41" selection-end-column="43" />
+          <caret line="41" column="43" selection-start-line="41" selection-start-column="43" selection-end-line="41" selection-end-column="43" />
         </state>
       </provider>
     </entry>
