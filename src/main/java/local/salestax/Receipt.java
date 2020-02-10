@@ -84,7 +84,9 @@ public class Receipt implements AddProduct, CashierFunctions
 				setSalesTax(getSalesTax() + p.getRegularTax());
 				settotal(total += p.getPrice());
 			}
+
 		}
+
 	}
 
 
