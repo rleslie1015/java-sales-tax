@@ -80,28 +80,39 @@ public class Product
 
 	public double calculateRegularTax()
 	{
-		//calculate 10% tax rounded
-		double taxes = Math.round((getPrice() / 10) * 100) / 100.0;
+		if (!isExempt())
+		{
+			//calculate 10% tax rounded
+			double taxes = Math.round((getPrice() / 10) * 100) / 100.0;
 
-		//rounded up to the nearest 0.05
-		taxes = Math.ceil(taxes * 20) / 20.0;
+			//rounded up to the nearest 0.05
+			taxes = Math.ceil(taxes * 20) / 20.0;
 
-		//set the tax for the item
-		setRegularTax(taxes);
+			//set the tax for the item
+			setRegularTax(taxes);
 
-		return getRegularTax();
+			return getRegularTax();
+		} else
+		{
+			return getRegularTax();
+		}
+
 	}
 
 	public double calculateImportedTax()
 	{
-		double tenPercent = Math.round((getPrice() / 10) * 100) / 100.0;
-		double fivePercent = Math.round(tenPercent / 2 * 100) / 100.0;
-		//rounded up to the nearest 0.05
-		fivePercent = Math.ceil(fivePercent * 20) / 20.0;
+		if(isImported()){
+			double tenPercent = Math.round((getPrice() / 10) * 100) / 100.0;
+			double fivePercent = Math.round(tenPercent / 2 * 100) / 100.0;
+			//rounded up to the nearest 0.05
+			fivePercent = Math.ceil(fivePercent * 20) / 20.0;
 
-		//set the imported tax for the item
-		setImportedTax(fivePercent);
-		return getImportedTax();
+			//set the imported tax for the item
+			setImportedTax(fivePercent);
+			return getImportedTax();
+		}else {
+			return getImportedTax();
+		}
 	}
 
 }
